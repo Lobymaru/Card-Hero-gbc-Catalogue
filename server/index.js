@@ -1,14 +1,13 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors= require('cors')
 const app=express();
 const mysql= require('mysql');
 
 const db = mysql.createPool({
-    host: 'localhost',
-    user: 'user',
-    password: 'LimitedUser',
-    database: 'card_hero-cards'
+    host: 'beley3bhpsjckoefkohr-mysql.services.clever-cloud.com',
+    user: 'ueljjyhjwkjhc1u2',
+    password: 'fGhY5boS2FGc8PvrdInq',
+    database: 'beley3bhpsjckoefkohr'
 })
 
 app.use(cors());
