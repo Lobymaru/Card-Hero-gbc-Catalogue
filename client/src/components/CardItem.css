@@ -1,9 +1,7 @@
 .card__item{
     display: flex;    
-    flex: 1;
     padding-bottom: 1rem;
     border-radius: 10px;
-    width:fit-content;
 }
 .card__container{
     width: 150px;
@@ -13,17 +11,29 @@
     -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
     filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
     border-radius: 10px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: black;
     overflow: hidden;
     text-decoration: none;
     align-items: center;
     background-color:royalblue;
 }
-
+.card__wrapper{
+    width:90%;
+    height:fit-content;
+    margin: 8px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: black;
+}
 .card__item__pic-wrap{
     position: relative;
-    width: 90%;
-    margin: 8px 0px 0px;
-    overflow: hidden;   
+    width: 100%;
+    overflow: hidden;
+    border-width: 4px;
+    border-bottom: black;
+    border-bottom-color: black;   
 }
 
 .card__item__img{
@@ -39,13 +49,15 @@
 }
 
 .card__item__info{
-    padding: 15px 0px 15px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
     color: #252e48;
     font-size: 18px;
     line-height: 24px;
     text-align: center;
-    margin-bottom:8px;
-    width: 90%;
+    width: 100%;
+    height: 60px;
 }
 
 .card__item__name{
