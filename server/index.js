@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended: true}));
 
 
 app.get("/api/get", (req, res) => {
-    const sqlSelect = 'SELECT name FROM cards;';
+    const sqlSelect = 'SELECT id_cards, name FROM cards;';
     db.query(sqlSelect, (err, resul) => {
         res.send(resul)
     })

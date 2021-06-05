@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Axios from 'axios';
 import './App.css';
+import CardItem from './components/CardItem'
 
 function App() {
   const [cardList, setCardList] = useState([]);
@@ -11,12 +12,20 @@ function App() {
     })
   }, []);
 
+  console.log(cardList)
+
   return (
-    <div className="App">
-      {cardList.map((val) =>{
-        return <img src={process.env.PUBLIC_URL + '/images/cards-full-art/' + val.name + '.png'}  alt={val.name} />
-      })}
-    </div>
+    <>
+      <div className='cards__container'>
+        <div className='cards__wrapper'>
+          <ul className='cards__items'>
+            {cardList.map((val) =>{
+              return <CardItem name={val.name} id={val.id_cards} />
+            })}
+          </ul>
+        </div>
+      </div>
+    </>
   );
 }
 
