@@ -15,8 +15,17 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}));
 
 
-app.get("/api/get", (req, res) => {
+app.get("/api/get-all", (req, res) => {
     const sqlSelect = 'SELECT * FROM cards;';
+    db.query(sqlSelect, (err, resul) => {
+        res.send(resul)
+    })
+})
+
+app.get("/api/get-stats", (req, res) => {
+    console.log(req.body);
+    const cardId = req.body.cardId
+    const sqlSelect = "SELECT * FROM `monster_stats` WHERE id= "+cardId+";";
     db.query(sqlSelect, (err, resul) => {
         res.send(resul)
     })

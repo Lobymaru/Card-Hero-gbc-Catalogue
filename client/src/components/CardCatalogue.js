@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
 import Axios from 'axios';
-import CardItem from './CardItem'
-import './CardCatalogue.css'
+import CardItem from './CardItem';
+import Modal from './Modal';
+import './CardCatalogue.css';
 import { motion } from "framer-motion";
 
 function CardCatalogue() {
@@ -27,9 +28,10 @@ function CardCatalogue() {
     };
     
     const [cardList, setCardList] = useState([]);
+    const [selectedCard, setSelectedCard] = useState([])
 
     useEffect(() => {
-        Axios.get('http://localhost:3001/api/get').then((response) => {
+        Axios.get('http://localhost:3001/api/get-all').then((response) => {
           setCardList(response.data)
         })
       }, []);
@@ -42,10 +44,11 @@ function CardCatalogue() {
         animate="visible"
       >
         {cardList.map((val) => (
-          <motion.li key={val.name} className="item" variants={item} whileHover={{scale: 1.3}}>
-              <CardItem name={val.name} id={val.id_cards}/>
+          <motion.li key={val.name} className="item" variants={item} whileHover={{scale: 1.3}} onClick={() => setSelectedCard(val)}>
+              <CardItem name={val.name} id={val.id_cards} />
           </motion.li>
         ))}
+        {selectedCard && (<Modal setSelectedCard={setSelectedCard} selectedCard={selectedCard} />)}
       </motion.ul>
     );
 }
