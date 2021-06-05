@@ -2,6 +2,7 @@
     display: flex;    
     flex: 1;
     margin: 0 1rem;
+    padding-bottom: 1rem;
     border-radius: 10px;
     width:fit-content;
 }
@@ -16,12 +17,13 @@
     overflow: hidden;
     text-decoration: none;
     align-items: center;
+    background-color:royalblue;
 }
 
 .card__item__pic-wrap{
     position: relative;
-    width: 70%;
-    padding-top: 10px;
+    width: 90%;
+    margin: 8px 0px 0px;
     overflow: hidden;   
 }
 
@@ -38,13 +40,16 @@
 }
 
 .card__item__info{
-    padding: 20px 30px 30px;
+    padding: 15px 0px 15px;
     color: #252e48;
     font-size: 18px;
     line-height: 24px;
     text-align: center;
+    margin-bottom:8px;
+    width: 90%;
 }
 
 .card__item__name{
     font-weight: bolder;
+
 }
