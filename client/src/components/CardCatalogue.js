@@ -42,7 +42,7 @@ function CardCatalogue() {
         animate="visible"
       >
         {cardList.map((val) => (
-          <motion.li key={val.name} className="item" variants={item}>
+          <motion.li key={val.name} className="item" variants={item} whileHover={{scale: 1.3}}>
               <CardItem name={val.name} id={val.id_cards}/>
           </motion.li>
         ))}
