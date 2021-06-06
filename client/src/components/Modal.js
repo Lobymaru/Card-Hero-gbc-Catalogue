@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Axios from 'axios';
+import './Modal.css'
+import CardStats from './CardStats'
+
 
 const Modal = ({ setSelectedCard, selectedCard }) => {
 
@@ -36,9 +39,14 @@ const Modal = ({ setSelectedCard, selectedCard }) => {
         initial={{ y: "-100vh" }}
         animate={{ y: 0 }}
       >
-        <figure className='full__card__pic-wrap'>
-          <img src={process.env.PUBLIC_URL + '/images/cards-full-art/' + selectedCard.name + '.png'} alt={selectedCard.name} className='full__card__img'/>
-        </figure>
+        <div className="card__basic__info">
+          <figure className='full__card__pic-wrap'>
+            <img src={process.env.PUBLIC_URL + '/images/cards-full-art/' + selectedCard.name + '.png'} alt={selectedCard.name} className='full__card__img'/>
+          </figure>
+        </div>
+        <div className="full__card__stats__container">
+          <CardStats cardStats={cardStats} cardType={selectedCard.type}/>
+        </div>
       </motion.div>
     </motion.div>
   )
