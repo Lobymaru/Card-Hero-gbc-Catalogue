@@ -23,8 +23,8 @@ app.get("/api/get-all", (req, res) => {
 })
 
 app.get("/api/get-stats", (req, res) => {
-    console.log(req.body);
-    const cardId = req.body.cardId
+    console.log(req.query);
+    const cardId = req.query.cardId
     const sqlSelect = "SELECT * FROM `monster_stats` WHERE id= "+cardId+";";
     db.query(sqlSelect, (err, resul) => {
         res.send(resul)

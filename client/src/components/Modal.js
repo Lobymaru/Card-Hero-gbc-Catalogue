@@ -7,12 +7,8 @@ const Modal = ({ setSelectedCard, selectedCard }) => {
   const [cardStats, setCardStats] = useState([]);
 
   useEffect(() => {
-     Axios.get('http://localhost:3001/api/get-stats', {
-      params: {
-        cardId: selectedCard.id_cards,
-        cardType: selectedCard.type
-      }
-    }).then((response) => {
+      Axios.get('http://localhost:3001/api/get-stats?cardId='+selectedCard.id_cards+'&cardType='+selectedCard.type, {
+    }).then(async (response) => {
       setCardStats(response.data)
     })
   }, []);
@@ -20,6 +16,7 @@ const Modal = ({ setSelectedCard, selectedCard }) => {
   const handleClick = (e) => {
     if (e.target.classList.contains('backdrop')) {
       setSelectedCard(null);
+      setCardStats(null);
     }
   }
 
@@ -36,7 +33,7 @@ const Modal = ({ setSelectedCard, selectedCard }) => {
         animate={{ y: 0 }}
       >
         <figure className='full__card__pic-wrap'>
-          <img src={process.env.PUBLIC_URL + '/images/cards-full-art/' + selectedCard + '.png'} alt={selectedCard} className='full__card__img'/>
+          <img src={process.env.PUBLIC_URL + '/images/cards-full-art/' + selectedCard.name + '.png'} alt={selectedCard.name} className='full__card__img'/>
         </figure>
       </motion.div>
     </motion.div>
