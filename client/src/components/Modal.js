@@ -7,7 +7,11 @@ const Modal = ({ setSelectedCard, selectedCard }) => {
   const [cardStats, setCardStats] = useState([]);
 
   useEffect(() => {
-      Axios.get('http://localhost:3001/api/get-stats?cardId='+selectedCard.id_cards+'&cardType='+selectedCard.type, {
+      Axios.get('http://localhost:3001/api/get-stats', {
+        params: {
+          cardId:selectedCard.id_cards,
+          cardType:selectedCard.type
+        }
     }).then(async (response) => {
       setCardStats(response.data)
     })
