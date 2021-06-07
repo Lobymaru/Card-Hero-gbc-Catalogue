@@ -1,0 +1,46 @@
+.card__stats__wrapper{
+    display: flex;
+    flex-flow: row;
+    width:100%;
+    height: fit-content;
+    border-width: 0px;
+    border-top:darkslategray;
+    border-top-width: 4px;
+    border-style: solid;
+    background: ivory;
+}
+
+.card__stats__lvl{
+    width: 110px;
+    border-width: 0px;
+    border-right:darkslategray;
+    border-right-width: 4px;
+    border-style: solid;
+    background: ivory;
+}
+.card__stats__lvl__text{
+    font-weight:bolder;
+}
+.card__stats__attacks{
+    width: 100%;
+    background-color: ivory;
+    height: fit-content;
+    display: flex;
+    flex-flow: column;
+}
+
+.card__stats__attack__2{
+    justify-content: space-between;
+    background-color: ivory;
+}
+.card__stats__ability{
+    background-color:gray;
+    display: flex;
+    flex-flow: column-reverse;
+    align-items: baseline;
+    height:fit-content;
+    margin-top: 1rem;
+}
+.card__stats__ability p{
+
+}
