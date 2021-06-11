@@ -7,10 +7,11 @@
     border-top:darkslategray;
     border-top-width: 4px;
     border-style: solid;
-    background: ivory;
+    background-color: ivory;
 }
 
 .card__stats__lvl{
+    margin-left: 5px;
     width: 110px;
     border-width: 0px;
     border-right:darkslategray;
@@ -18,8 +19,10 @@
     border-style: solid;
     background: ivory;
 }
+
 .card__stats__lvl__text{
     font-weight:bolder;
+
 }
 .card__stats__attacks{
     width: 100%;
@@ -28,7 +31,13 @@
     display: flex;
     flex-flow: column;
 }
-
+.card__stats__attacks div,
+.card__stats__attacks img,
+.card__stats__attacks t,
+.card__stats__lvl t,
+.card__stats__ability p{
+    background: ivory;
+}
 .card__stats_attack__1{
     display: flex;
     align-items: center;

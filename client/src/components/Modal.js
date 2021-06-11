@@ -16,15 +16,29 @@ const Modal = ({ setSelectedCard, selectedCard }) => {
           cardType:selectedCard.type
         }
     }).then(async (response) => {
-      setCardStats(response.data)
+      setCardStats(response.data);
     })
-  }, []);
+  }, [selectedCard]);
 
   const handleClick = (e) => {
     if (e.target.classList.contains('backdrop')) {
       setSelectedCard(null);
       setCardStats(null);
     }
+  }
+
+  const getInitials = (expansion) => {
+    return(expansion.replace(/[a-z, &]/g, ''))
+  }
+
+  const normalizeId = (id) =>{
+    let zero='';
+    const idString=id.toString();
+    let i = 0;
+    for (; i < 3-idString.length; i++) {
+      zero=zero+'0'
+    }
+    return(zero+id)
   }
 
   return (
@@ -40,6 +54,19 @@ const Modal = ({ setSelectedCard, selectedCard }) => {
           <figure className='full__card__pic-wrap'>
             <img src={process.env.PUBLIC_URL + '/images/cards-full-art/' + selectedCard.name + '.png'} alt={selectedCard.name} className='full__card__img'/>
           </figure>
+          <div className="card__basic__info__data__wrapper">
+            <div className="card__basic__info__name__wrapper">
+              <div className="card__basic__info__expansion">{getInitials(selectedCard.expansion)}</div>
+              <div className="card__basic__info__id">{normalizeId(selectedCard.id_cards)}</div>
+              <div className="card__basic__info__name">{selectedCard.name}</div>
+            </div>
+            <div className="card__basic__info__type__wrapper">
+              <p>{selectedCard.type}</p>
+            </div>
+            <div className="card__basic__info__flavor__text__wrapper">
+
+            </div>
+          </div>
         </div>
         <div className="full__card__stats__container">
           <CardStats cardStats={cardStats} cardType={selectedCard.type}/>

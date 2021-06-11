@@ -1,4 +1,7 @@
 .backdrop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top:0;
     left: 0;
@@ -10,10 +13,66 @@
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
-    width: 75%;
+    width: 550px;
     box-shadow: 3px 5px 7px rgba(0,0,0,0.5);
     border: 3px solid white;
+    border-style: solid;
+    border-color: darkslategray;
+    border-width: 4px;
+    border-radius: 5px;
 }
 .card__basic__info{
     width:100%;
+    display: flex;
+    flex-flow: row;
 }
+    .full__card__pic-wrap{
+        height: fit-content;
+    }
+    .full__card__img{
+        width: 90px;
+        height: 90px;
+    }
+
+.card__basic__info__data__wrapper{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+}
+    .card__basic__info__name__wrapper{
+        display: flex;
+        flex-flow: row;
+        width: 100%;
+        height: fit-content;
+        align-items: center;
+        justify-content: flex-start;
+    }
+        .card__basic__info__expansion{
+            font-family: Impact;
+        }
+        .card__basic__info__id{
+            margin-left: 5px;
+            font-family:monospace;
+            font-size: 19px;
+            font-weight: bold;
+            color:cornflowerblue;
+        }
+        .card__basic__info__name{
+            margin-left: 5px;
+        }
+    .card__basic__info__type__wrapper{
+        width: 100%;
+        height: fit-content; 
+        background: red;
+        border-style: solid;
+        border-color:rgba(0,0,0,0.8);
+        border-width: 0px;
+        border-bottom-width: 2px;
+        border-right-width: 2px;  
+    }
+    .card__basic__info__type__wrapper p{
+        margin-left: 8px;
+        color: white;
+        font-family:fantasy;
+        background: red;
+    }

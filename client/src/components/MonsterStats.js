@@ -28,7 +28,9 @@ function MonsterStats({cardStats}) {
     }
 
     const Simbol= (val) =>{
-        return(val.atq2.slice(0, val.atq2.search(" ")))
+        let simbolEnd = val.atq2.search(" ")
+        if (simbolEnd === -1){simbolEnd = val.atq2.length}
+        return(val.atq2.slice(0, simbolEnd))
     }
 
     const CheckSecondAttack = (val) =>{
@@ -41,6 +43,11 @@ function MonsterStats({cardStats}) {
         else {return (true)}
     }
 
+    const AttackDamage = (val) =>{
+        if (val.atq2.slice(-1) === 'D' | val.atq2.slice(-1) === 'p') {return(val.atq2.slice(-2))}
+        else {return('')}
+    }
+
     const SecondAttack = ({val}) =>{
         return(
             <div className="card__stats__attack__2">
@@ -48,7 +55,7 @@ function MonsterStats({cardStats}) {
                     <img src={process.env.PUBLIC_URL + '/images/simbols/Power Stone.png'} alt="Power Stone" className="card__stats__attack__2__power__stone" />
                     <t>{val.atq2_cost}</t>
                     <img src={process.env.PUBLIC_URL + '/images/simbols/' + ProcessSimbol(val) + '.png'} alt={ProcessSimbol(val)} className="card__stats__attack__2__simbol" />
-                    <t>{val.atq2.slice(-2)}</t>
+                    <t>{AttackDamage(val)}</t>
                 </div>
                 <t>{val.atq2_effect}</t>
             </div>
