@@ -4,7 +4,6 @@ import './MonsterStats.css'
 function MonsterStats({cardStats}) {
 
     const ProcessSimbol=(val) =>{
-
         const simbol=Simbol(val)
 
         switch(simbol){
@@ -32,6 +31,35 @@ function MonsterStats({cardStats}) {
         return(val.atq2.slice(0, val.atq2.search(" ")))
     }
 
+    const CheckSecondAttack = (val) =>{
+        if (val.atq2 === '') {return (false)}
+        else {return (true)}
+    }
+
+    const CheckAbility = (val) =>{
+        if (val.ability === '') {return (false)}
+        else {return (true)}
+    }
+
+    const SecondAttack = ({val}) =>{
+        return(
+            <div className="card__stats__attack__2">
+                <div className="card__stats__attack__2__damage">
+                    <img src={process.env.PUBLIC_URL + '/images/simbols/Power Stone.png'} alt="Power Stone" className="card__stats__attack__2__power__stone" />
+                    <t>{val.atq2_cost}</t>
+                    <img src={process.env.PUBLIC_URL + '/images/simbols/' + ProcessSimbol(val) + '.png'} alt={ProcessSimbol(val)} className="card__stats__attack__2__simbol" />
+                    <t>{val.atq2.slice(-2)}</t>
+                </div>
+                <t>{val.atq2_effect}</t>
+            </div>
+        )}
+
+    const Ability = ({val}) => {
+        return(
+            <div className="card__stats__ability">
+                <p>{val.ability}</p>
+            </div>)
+    }
 
     return (
         <>
@@ -45,19 +73,11 @@ function MonsterStats({cardStats}) {
                 </div>
                 <div className="card__stats__attacks">
                     <div className="card__stats_attack__1">
-                        <img src={process.env.PUBLIC_URL + '/images/simbols/Basic Attack.png'} alt="Basic Attack" />
+                        <img src={process.env.PUBLIC_URL + '/images/simbols/Basic Attack.png'} alt="Basic Attack" className="card__stats__attack__1__simbol"/>
                         <t>{val.atq1.slice(1)}</t>
                     </div>
-                    <div className="card__stats__attack__2">
-                        <img src={process.env.PUBLIC_URL + '/images/simbols/Power Stone.png'} alt="Power Stone" />
-                        <t>{val.atq2_cost}</t>
-                        <img src={process.env.PUBLIC_URL + '/images/simbols/' + ProcessSimbol(val) + '.png'} alt={ProcessSimbol(val)} />
-                        <t>{val.atq2.slice(-2)}</t>
-                        <t>{val.atq2_effect}</t>
-                    </div>
-                    <div className="card__stats__ability">
-                        <p>{val.ability}</p>
-                    </div>
+                        {CheckSecondAttack(val) && <SecondAttack val={val}/>}
+                        {CheckAbility(val) && <Ability val={val}/>}
                 </div>
             </div>
         ))}

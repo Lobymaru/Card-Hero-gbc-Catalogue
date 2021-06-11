@@ -23,13 +23,13 @@ app.get("/api/get-all", (req, res) => {
 })
 
 app.get("/api/get-stats", (req, res) => {
-    console.log(req.query);
     const cardId = req.query.cardId
     const cardType = req.query.cardType
     const sqlSelect = "SELECT * FROM `"+cardType+"_stats` WHERE id= "+cardId+";";
     db.query(sqlSelect, (err, resul) => {
         res.send(resul)
     })
+
 })
 
 app.listen(3001, () =>  {

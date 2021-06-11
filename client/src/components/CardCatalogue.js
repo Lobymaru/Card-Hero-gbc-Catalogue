@@ -28,7 +28,7 @@ function CardCatalogue() {
     };
     
     const [cardList, setCardList] = useState([]);
-    const [selectedCard, setSelectedCard] = useState([])
+    const [selectedCard, setSelectedCard] = useState(null)
 
     useEffect(() => {
         Axios.get('http://localhost:3001/api/get-all').then((response) => {
@@ -45,7 +45,7 @@ function CardCatalogue() {
       >
         {cardList.map((val) => (
           <motion.li key={val.name} className="item" variants={item} whileHover={{scale: 1.3}} onClick={() => setSelectedCard(val)}>
-              <CardItem name={val.name} id={val.id_cards} />
+              <CardItem name={val.name} id={val.id_cards}  />
           </motion.li>
         ))}
         {selectedCard && (<Modal setSelectedCard={setSelectedCard} selectedCard={selectedCard} />)}

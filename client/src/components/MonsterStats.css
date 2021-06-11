@@ -29,18 +29,48 @@
     flex-flow: column;
 }
 
+.card__stats_attack__1{
+    display: flex;
+    align-items: center;
+}
+
 .card__stats__attack__2{
+    display: flex;
     justify-content: space-between;
     background-color: ivory;
 }
+
+.card__stats__attack__2 t{
+    padding-right: 5px;
+}
+
+.card__stats__attack__2__damage{
+    display: flex;
+    height:fit-content;
+    width: 80px;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.card__stats__attack__1__simbol,
+.card__stats__attack__2__power__stone{
+    width: 14px;
+    height: 14px;
+    margin-left: 3px;
+    margin-bottom: 2px;
+}
+.card__stats__attack__2__simbol{
+    padding-right: 5px;
+    width: 40%;
+    height: 40%;
+}
+
 .card__stats__ability{
-    background-color:gray;
+    background-color:ivory;
     display: flex;
     flex-flow: column-reverse;
     align-items: baseline;
     height:fit-content;
     margin-top: 1rem;
-}
-.card__stats__ability p{
-
 }

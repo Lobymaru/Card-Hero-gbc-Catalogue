@@ -27,9 +27,6 @@ const Modal = ({ setSelectedCard, selectedCard }) => {
     }
   }
 
-  console.log(selectedCard.id_cards)
-  console.log(cardStats)
-
   return (
     <motion.div className="backdrop" onClick={handleClick}
       initial={{ opacity: 0 }}

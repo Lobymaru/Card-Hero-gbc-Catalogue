@@ -1,15 +1,12 @@
 import React from 'react';
 import MonsterStats from './MonsterStats'
+import MagicStats from './MagicStats'
+import MasterStats from './MasterStats'
 
 function CardStats({cardStats, cardType}) {
+    console.log("type", cardType)
+    console.log("Stats", cardStats)
 
-    const DrawMagicStats= () =>{
-        return (null)
-    }
-
-    const DrawMasterStats= () =>{
-        return (null)
-    }
     const DrawPost= () =>{
         switch(cardType){
             case "monster": 
@@ -20,12 +17,12 @@ function CardStats({cardStats, cardType}) {
             case "magic": 
                 return (
                     <>
-                        {DrawMagicStats()}
+                        <MagicStats cardStats={cardStats}/>
                     </>);
             default:
                 return (
                     <>
-                        {DrawMasterStats()}
+                        <MasterStats cardStats={cardStats}/>
                     </>);
         }
     }
