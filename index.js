@@ -32,6 +32,6 @@ app.get("/api/get-stats", (req, res) => {
 
 })
 
-app.listen(3001, () =>  {
+app.listen((process.env.PORT || 3001), () =>  {
     console.log('running on port 3001')
 })
