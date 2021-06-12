@@ -31,7 +31,7 @@ function CardCatalogue() {
     const [selectedCard, setSelectedCard] = useState(null)
 
     useEffect(() => {
-        Axios.get('http://localhost:3001/api/get-all').then((response) => {
+        Axios.get('https://card-hero-catalogue-server.herokuapp.com/api/get-all').then((response) => {
           setCardList(response.data)
         })
       }, []);
