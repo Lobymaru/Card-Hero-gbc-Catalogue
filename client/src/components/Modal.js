@@ -10,7 +10,7 @@ const Modal = ({ setSelectedCard, selectedCard }) => {
   const [cardStats, setCardStats] = useState([]);
 
   useEffect(() => {
-      Axios.get('http://localhost:3001/api/get-stats', {
+      Axios.get('https://card-hero-catalogue-server.herokuapp.com/api/get-stats', {
         params: {
           cardId:selectedCard.id_cards,
           cardType:selectedCard.type
