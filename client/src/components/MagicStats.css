@@ -1,0 +1,9 @@
+.card__stats__magic__wrapper{
+    width: 100%;
+    height: fit-content;
+    border-width: 0px;
+    border-style: solid;
+    border-color: darkslategray;
+    border-top-width: 4px;
+    padding: 3px 0;
+}

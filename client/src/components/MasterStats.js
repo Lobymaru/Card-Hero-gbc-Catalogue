@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './MasterStats.css';
 
 function MasterStats({cardStats}) {
     console.log(cardStats)
@@ -23,6 +24,7 @@ function MasterStats({cardStats}) {
                     </div>
                 </div>
             ))}
+            <div className="full__card__filler" />
         </>
     )
 }

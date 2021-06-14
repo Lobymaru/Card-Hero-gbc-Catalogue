@@ -1,5 +1,5 @@
-import React from 'react'
-import './MonsterStats.css'
+import React from 'react';
+import './MonsterStats.css';
 
 function MonsterStats({cardStats}) {
 
@@ -88,6 +88,7 @@ function MonsterStats({cardStats}) {
                 </div>
             </div>
         ))}
+        <div className="full__card__filler" />
     </>
     )
 }

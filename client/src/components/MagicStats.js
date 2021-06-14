@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './MagicStats.css';
 
 function MagicStats({cardStats}) {
     return (
@@ -10,6 +11,7 @@ function MagicStats({cardStats}) {
                 <t>{val.effect}</t>
             </div>
             ))}
+            <div className="full__card__filler" />
         </>
     )
 }
