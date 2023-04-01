@@ -12,7 +12,7 @@ const Modal = ({ setSelectedCard, selectedCard }) => {
   const [bannerColor, setBannerColor] = useState(null);
 
   useEffect(() => {
-    Axios.get('https://card-hero-catalogue-server.herokuapp.com/api/get-stats', {
+    Axios.get('https://card-hero-catalogue.cyclic.app/api/get-stats', {
       params: {
         cardId:selectedCard.id_cards,
         cardType:selectedCard.type
