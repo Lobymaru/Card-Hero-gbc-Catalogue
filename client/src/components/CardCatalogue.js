@@ -31,7 +31,7 @@ function CardCatalogue() {
     const [selectedCard, setSelectedCard] = useState(null)
 
     useEffect(() => {
-        Axios.get('https://card-hero-catalogue.cyclic.app/api/get-all').then((response) => {
+        Axios.get('https://card-hero-gbc-catalogue.onrender.com/api/get-all').then((response) => {
           setCardList(response.data)
         })
       }, []);
